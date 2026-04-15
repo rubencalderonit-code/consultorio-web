@@ -22,11 +22,17 @@ color:#333;
 nav{
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:20px 40px;
 background:white;
 position:sticky;
 top:0;
+z-index:1000;
 box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav h2{
+color:#2c7be5;
 }
 
 nav a{
@@ -37,37 +43,37 @@ margin-left:20px;
 
 /* HERO */
 .hero{
-height:90vh;
+height:100vh;
+background:url('https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f') center/cover;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-background:linear-gradient(to right,#2c7be5,#6ea8fe);
 color:white;
-padding:20px;
 }
 
-.hero h1{
-font-size:3rem;
+.overlay{
+background:rgba(0,0,0,0.6);
+padding:40px;
+border-radius:10px;
+max-width:600px;
 }
 
-.hero p{
-margin-top:15px;
-font-size:1.2rem;
+.overlay h1{
+font-size:2.5rem;
 }
 
 .btn{
 display:inline-block;
 margin-top:20px;
 padding:12px 25px;
-background:white;
-color:#2c7be5;
+background:#2c7be5;
+color:white;
 text-decoration:none;
 border-radius:5px;
-font-weight:bold;
 }
 
-/* SECTIONS */
+/* SECCIONES */
 .section{
 padding:80px 20px;
 max-width:1100px;
@@ -101,31 +107,20 @@ padding:60px 20px;
 
 .testimonial{
 margin-bottom:20px;
+font-style:italic;
 }
 
-/* CONTACTO */
-.contact{
-background:#2c7be5;
-color:white;
+/* CALENDARIO */
+.calendar{
 padding:60px 20px;
 text-align:center;
 }
 
-input, textarea{
+iframe{
 width:100%;
-padding:10px;
-margin:10px 0;
+height:650px;
 border:none;
-border-radius:5px;
-}
-
-button{
-background:white;
-color:#2c7be5;
-padding:10px 20px;
-border:none;
-border-radius:5px;
-cursor:pointer;
+border-radius:10px;
 }
 
 /* WHATSAPP */
@@ -151,12 +146,11 @@ color:white;
 
 /* RESPONSIVE */
 @media(max-width:768px){
-.hero h1{
-font-size:2rem;
-}
 nav{
 flex-direction:column;
-align-items:center;
+}
+.overlay h1{
+font-size:2rem;
 }
 }
 </style>
@@ -165,18 +159,18 @@ align-items:center;
 <body>
 
 <nav>
-<h3>Psicóloga Alondra Gonzalez</h3>
+<h2>Psicóloga Ana López</h2>
 <div>
 <a href="#servicios">Servicios</a>
-<a href="#contacto">Contacto</a>
+<a href="#agenda">Agenda</a>
 </div>
 </nav>
 
 <section class="hero">
-<div>
+<div class="overlay">
 <h1>Recupera tu bienestar emocional</h1>
 <p>Terapia profesional para ansiedad, depresión y relaciones</p>
-<a class="btn" href="https://wa.me/5218443435820">Agendar cita</a>
+<a class="btn" href="#agenda">Agendar cita</a>
 </div>
 </section>
 
@@ -201,20 +195,15 @@ align-items:center;
 <section class="testimonials">
 <h2 style="text-align:center;">Testimonios</h2>
 <div class="section">
-<p class="testimonial">"Me ayudó muchísimo con mi ansiedad."</p>
-<p class="testimonial">"Profesional y muy humana."</p>
+<p class="testimonial">"Excelente atención, me ayudó muchísimo."</p>
+<p class="testimonial">"Muy profesional y empática."</p>
 </div>
 </section>
 
-<section class="contact" id="contacto">
+<section class="calendar" id="agenda">
 <h2>Agenda tu cita</h2>
 
-<form action="https://formspree.io/f/xeevezpn" method="POST">
-<input type="text" name="nombre" placeholder="Nombre" required>
-<input type="email" name="email" placeholder="Correo" required>
-<textarea name="mensaje" placeholder="Mensaje" required></textarea>
-<button type="submit">Enviar</button>
-</form>
+<iframe src="https://calendar.app.google/MHa4TfatTTPhQY4w5"></iframe>
 
 </section>
 
