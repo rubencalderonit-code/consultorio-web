@@ -3,34 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Psicología Integral</title>
+<title>Psicóloga Profesional</title>
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: Arial, sans-serif;
+font-family: 'Segoe UI', sans-serif;
 }
 
 body{
-background:#f5f7fa;
+background:#f9fafc;
 color:#333;
 }
 
-header{
-background:#2c7be5;
-color:white;
-padding:40px 20px;
+/* NAV */
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 40px;
+background:white;
+position:sticky;
+top:0;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+margin-left:20px;
+}
+
+/* HERO */
+.hero{
+height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
+background:linear-gradient(to right,#2c7be5,#6ea8fe);
+color:white;
+padding:20px;
 }
 
-header h1{
-font-size:2.5rem;
+.hero h1{
+font-size:3rem;
 }
 
-header p{
-margin-top:10px;
+.hero p{
+margin-top:15px;
+font-size:1.2rem;
 }
 
 .btn{
@@ -40,13 +63,14 @@ padding:12px 25px;
 background:white;
 color:#2c7be5;
 text-decoration:none;
-font-weight:bold;
 border-radius:5px;
+font-weight:bold;
 }
 
+/* SECTIONS */
 .section{
-padding:60px 20px;
-max-width:1000px;
+padding:80px 20px;
+max-width:1100px;
 margin:auto;
 }
 
@@ -61,14 +85,30 @@ flex:1;
 background:white;
 padding:20px;
 border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
 }
 
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* TESTIMONIOS */
+.testimonials{
+background:#eef3ff;
+padding:60px 20px;
+}
+
+.testimonial{
+margin-bottom:20px;
+}
+
+/* CONTACTO */
 .contact{
 background:#2c7be5;
 color:white;
+padding:60px 20px;
 text-align:center;
-padding:40px 20px;
 }
 
 input, textarea{
@@ -80,7 +120,7 @@ border-radius:5px;
 }
 
 button{
-background:#fff;
+background:white;
 color:#2c7be5;
 padding:10px 20px;
 border:none;
@@ -88,55 +128,100 @@ border-radius:5px;
 cursor:pointer;
 }
 
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+text-decoration:none;
+}
+
+/* FOOTER */
 footer{
 text-align:center;
 padding:20px;
 background:#222;
 color:white;
 }
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.hero h1{
+font-size:2rem;
+}
+nav{
+flex-direction:column;
+align-items:center;
+}
+}
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>Psicología Integral</h1>
-<p>Atención profesional para tu bienestar emocional</p>
-<a class="btn" href="https://wa.me/521XXXXXXXXXX">Agendar por WhatsApp</a>
-</header>
+<nav>
+<h3>Psicóloga Alondra Gonzalez</h3>
+<div>
+<a href="#servicios">Servicios</a>
+<a href="#contacto">Contacto</a>
+</div>
+</nav>
 
-<section class="section">
+<section class="hero">
+<div>
+<h1>Recupera tu bienestar emocional</h1>
+<p>Terapia profesional para ansiedad, depresión y relaciones</p>
+<a class="btn" href="https://wa.me/5218443435820">Agendar cita</a>
+</div>
+</section>
+
+<section class="section" id="servicios">
 <h2>Servicios</h2>
 <div class="cards">
 <div class="card">
 <h3>Ansiedad</h3>
-<p>Aprende a gestionar el estrés y recuperar el control.</p>
+<p>Aprende a controlar pensamientos y emociones.</p>
 </div>
 <div class="card">
 <h3>Depresión</h3>
-<p>Apoyo profesional para mejorar tu estado emocional.</p>
+<p>Recupera motivación y claridad en tu vida.</p>
 </div>
 <div class="card">
 <h3>Terapia de pareja</h3>
-<p>Fortalece tu relación con herramientas efectivas.</p>
+<p>Mejora la comunicación y conexión.</p>
 </div>
 </div>
 </section>
 
-<section class="contact">
-<h2>Contáctanos</h2>
+<section class="testimonials">
+<h2 style="text-align:center;">Testimonios</h2>
+<div class="section">
+<p class="testimonial">"Me ayudó muchísimo con mi ansiedad."</p>
+<p class="testimonial">"Profesional y muy humana."</p>
+</div>
+</section>
 
-<form action="https://formspree.io/f/TU-CODIGO" method="POST">
-<input type="text" name="nombre" placeholder="Tu nombre" required>
-<input type="email" name="email" placeholder="Tu correo" required>
-<textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+<section class="contact" id="contacto">
+<h2>Agenda tu cita</h2>
+
+<form action="https://formspree.io/f/xeevezpn" method="POST">
+<input type="text" name="nombre" placeholder="Nombre" required>
+<input type="email" name="email" placeholder="Correo" required>
+<textarea name="mensaje" placeholder="Mensaje" required></textarea>
 <button type="submit">Enviar</button>
 </form>
 
 </section>
 
+<a class="whatsapp" href="https://wa.me/5218443435820">💬</a>
+
 <footer>
-<p>© 2026 Psicología Integral</p>
+<p>© 2026 Psicóloga Ana López</p>
 </footer>
 
 </body>
